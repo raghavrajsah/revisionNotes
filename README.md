@@ -1,3 +1,70 @@
+# Recurison
+
+### **What is Recursion?**
+Recursion is when a function **calls itself** to solve a smaller subproblem, and the solutions to these subproblems combine to solve the original problem.
+
+
+
+
+### **Simplified Template**
+Use this **general template** to avoid getting confused:
+```java
+ReturnType recursion(Parameters params) {
+    // 1. Base Case: Stop recursion
+    if (baseCondition) {
+        return baseResult;
+    }
+
+    // 2. Recursive Case: Break into smaller subproblems
+    ReturnType leftResult = recursion(smallerSubproblem1);
+    ReturnType rightResult = recursion(smallerSubproblem2);
+
+    // 3. Combine Results: Merge subproblem results
+    ReturnType result = combine(leftResult, rightResult);
+
+    return result;
+}
+```
+
+
+#### **Example 1: Factorial**
+```java
+int factorial(int n) {
+    // Base Case
+    if (n == 0) return 1;
+
+    // Recursive Case
+    return n * factorial(n - 1);
+}
+```
+
+#### **Example 2: Fibonacci**
+```java
+int fibonacci(int n) {
+    // Base Case
+    if (n <= 1) return n;
+
+    // Recursive Case
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
+#### **Example 3: Binary Tree Maximum Depth**
+```java
+int maxDepth(TreeNode root) {
+    // Base Case
+    if (root == null) return 0;
+
+    // Recursive Case
+    int leftDepth = maxDepth(root.left);
+    int rightDepth = maxDepth(root.right);
+
+    return Math.max(leftDepth, rightDepth) + 1;
+}
+```
+
+
+
 # Heap Notes
 
 ### **How to Identify Heap/Queue Problems**
